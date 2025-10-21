@@ -8596,6 +8596,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@moonchain-mch/metadata@npm:0.0.1":
+  version: 0.0.1
+  resolution: "@moonchain-mch/metadata@npm:0.0.1"
+  checksum: ac5e5c35a303dcec23c99de8690537f766b996f0e46e9155b5410382e676e59e74a79164d215a7d1cda9adc9c31b0b404414b345f1f408f81462f9750c322dd9
+  languageName: node
+  linkType: hard
+
 "@motionone/animation@npm:^10.12.0":
   version: 10.18.0
   resolution: "@motionone/animation@npm:10.18.0"
@@ -17037,6 +17044,7 @@ __metadata:
     "@graphql-codegen/typescript-react-apollo": 3.3.7
     "@graphql-codegen/typescript-resolvers": 3.2.1
     "@juggle/resize-observer": 3.4.0
+    "@moonchain-mch/metadata": 0.0.1
     "@playwright/test": 1.49.1
     "@popperjs/core": 2.11.8
     "@reach/dialog": 0.10.5

@@ -1,6 +1,6 @@
 import { DeepPartial } from '@apollo/client/utilities'
 import { DataTag, DefaultError, QueryKey, UndefinedInitialDataOptions, queryOptions } from '@tanstack/react-query'
-import { Currency, Token } from '@uniswap/sdk-core'
+import { Currency, Token, ChainId } from '@uniswap/sdk-core'
 import { NATIVE_CHAIN_ID } from 'constants/tokens'
 import ms from 'ms'
 import { ExploreTab } from 'pages/Explore/constants'
@@ -29,6 +29,7 @@ import { AVERAGE_L1_BLOCK_TIME_MS } from 'uniswap/src/features/transactions/hook
 import { getChainIdFromBackendChain, getChainIdFromChainUrlParam } from 'utils/chainParams'
 import { getNativeTokenDBAddress } from 'utils/nativeTokens'
 
+console.log('ChainId', ChainId)
 export enum PollingInterval {
   Slow = ms(`5m`),
   Normal = ms(`1m`),
