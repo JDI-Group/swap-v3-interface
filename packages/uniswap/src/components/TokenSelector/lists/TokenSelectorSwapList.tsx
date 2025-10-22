@@ -31,7 +31,6 @@ function useTokenSectionsForSwap({
     refetch: refetchPortfolioTokenOptions,
     loading: portfolioTokenOptionsLoading,
   } = usePortfolioTokenOptions({ address: activeAccountAddress, chainFilter })
-
   const {
     data: trendingTokenOptions,
     error: trendingTokenOptionsError,
@@ -192,6 +191,7 @@ function _TokenSelectorSwapList({
     chainFilter,
     oppositeSelectedToken,
   })
+  console.log(error)
   return (
     <TokenSelectorList
       showTokenAddress

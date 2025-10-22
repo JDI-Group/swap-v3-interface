@@ -58,7 +58,7 @@ export const MOONCHAIN_HUDSON_CHAIN_INFO = {
   pendingTransactionsRetryOptions: undefined,
   rpcUrls: {
     [RPCType.Public]: { http: [getQuicknodeEndpointUrl(UniverseChainId.MoonchainHudson)] },
-    [RPCType.Default]: { http: ['https://rpc.mchain.ai'] },
+    [RPCType.Default]: { http: ['https://hudson-rpc.mchain.ai'] },
     [RPCType.Interface]: { http: [getQuicknodeEndpointUrl(UniverseChainId.MoonchainHudson)] },
   },
   spotPriceStablecoinAmountOverride: CurrencyAmount.fromRawAmount(tokens.USDC, 100e18),

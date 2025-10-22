@@ -349,6 +349,13 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId: number]: Token | undefined } =
     'WETH',
     'Wrapped Ether',
   ),
+  [UniverseChainId.MoonchainHudson]: new Token(
+    UniverseChainId.MoonchainHudson,
+    '0x1C5b8F35933d4C9BD0B49ca0b4F91475E1a6501b',
+    18,
+    'WMCH',
+    'Wrapped MCH',
+  ),
 }
 
 class NativeCurrencyImpl extends NativeCurrency {
