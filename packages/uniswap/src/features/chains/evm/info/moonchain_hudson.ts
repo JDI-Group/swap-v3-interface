@@ -30,7 +30,7 @@ export const MOONCHAIN_HUDSON_CHAIN_INFO = {
   assetRepoNetworkName: undefined,
   backendChain: {
     chain: BackendChainId.MoonchainHudson as GqlChainId,
-    backendSupported: true,
+    backendSupported: false,
     nativeTokenBackendAddress: undefined,
   },
   blockPerMainnetEpochForChainId: 177888,

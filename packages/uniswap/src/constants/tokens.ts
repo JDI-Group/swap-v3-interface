@@ -15,6 +15,7 @@ import { UNICHAIN_CHAIN_INFO, UNICHAIN_SEPOLIA_CHAIN_INFO } from 'uniswap/src/fe
 import { WORLD_CHAIN_INFO } from 'uniswap/src/features/chains/evm/info/worldchain'
 import { ZKSYNC_CHAIN_INFO } from 'uniswap/src/features/chains/evm/info/zksync'
 import { ZORA_CHAIN_INFO } from 'uniswap/src/features/chains/evm/info/zora'
+import { MOONCHAIN_HUDSON_CHAIN_INFO } from 'uniswap/src/features/chains/evm/info/moonchain_hudson'
 import { SOLANA_CHAIN_INFO } from 'uniswap/src/features/chains/svm/info/solana'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'
 import { isUniverseChainId } from 'uniswap/src/features/chains/utils'
@@ -163,6 +164,10 @@ export const { USDC: USDC_ZORA } = ZORA_CHAIN_INFO.tokens
 export const { USDC: USDC_WORLD_CHAIN } = WORLD_CHAIN_INFO.tokens
 
 export const { USDC: USDC_ZKSYNC } = ZKSYNC_CHAIN_INFO.tokens
+
+export const { USDC: USDC_MOONCHAIN_HUDSON } = MOONCHAIN_HUDSON_CHAIN_INFO.tokens
+
+export const { USDT: USDT_MOONCHAIN_HUDSON } = MOONCHAIN_HUDSON_CHAIN_INFO.tokens
 
 export const WBTC = new Token(
   UniverseChainId.Mainnet,

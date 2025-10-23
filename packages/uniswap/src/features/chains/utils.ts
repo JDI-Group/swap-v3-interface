@@ -250,7 +250,9 @@ export function getEnabledChains({
 
   // Extract chain IDs and GQL chains from filtered results
   const chains = enabledChainInfos.map((chainInfo) => chainInfo.id)
-  const gqlChains = enabledChainInfos.map((chainInfo) => chainInfo.backendChain.chain)
+  const gqlChains = enabledChainInfos
+    .filter((chainInfo) => chainInfo.backendChain.backendSupported)
+    .map((chainInfo) => chainInfo.backendChain.chain)
 
   const result = {
     chains,

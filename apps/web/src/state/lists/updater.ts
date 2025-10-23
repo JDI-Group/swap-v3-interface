@@ -45,7 +45,7 @@ export default function Updater(): null {
     // whenever a list is not loaded and not loading, try again to load it
     Object.keys(lists).forEach((listUrl) => {
       const list = lists[listUrl]
-      if (!list.current && !list.loadingRequestId && !list.error) {
+      if (!list || (!list.current && !list.loadingRequestId && !list.error)) {
         fetchList(listUrl).catch((error) =>
           logger.debug('lists/updater', 'Updater', 'list added fetching error', error),
         )
@@ -53,7 +53,7 @@ export default function Updater(): null {
     })
     DEFAULT_INACTIVE_LIST_URLS.forEach((listUrl) => {
       const list = lists[listUrl]
-      if (!list.current && !list.loadingRequestId && !list.error) {
+      if (!list || (!list.current && !list.loadingRequestId && !list.error)) {
         fetchList(listUrl, /* isUnsupportedList= */ true).catch((error) =>
           logger.debug('lists/updater', 'Updater', 'list added fetching error', error),
         )
@@ -69,7 +69,7 @@ export default function Updater(): null {
 
     Object.keys(lists).forEach((listUrl) => {
       const list = lists[listUrl]
-      if (list.current && list.pendingUpdate) {
+      if (list?.current && list.pendingUpdate) {
         const bump = getVersionUpgrade(list.current.version, list.pendingUpdate.version)
         switch (bump) {
           case VersionUpgrade.NONE:

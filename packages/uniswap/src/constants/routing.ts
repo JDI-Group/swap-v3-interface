@@ -20,6 +20,7 @@ import {
   USDC_BSC,
   USDC_CELO,
   USDC_MAINNET,
+  USDC_MOONCHAIN_HUDSON,
   USDC_OPTIMISM,
   USDC_POLYGON,
   USDC_SEPOLIA,
@@ -34,6 +35,7 @@ import {
   USDT_AVALANCHE,
   USDT_BSC,
   USDT_MONAD_TESTNET,
+  USDT_MOONCHAIN_HUDSON,
   USDT_OPTIMISM,
   USDT_POLYGON,
   WBTC,
@@ -176,6 +178,13 @@ export const COMMON_BASES: ChainCurrencyList = {
     nativeOnChain(UniverseChainId.Zora),
     WRAPPED_NATIVE_CURRENCY[UniverseChainId.Zora] as Token,
     USDC_ZORA,
+  ].map(buildPartialCurrencyInfo),
+
+  [UniverseChainId.MoonchainHudson]: [
+    nativeOnChain(UniverseChainId.MoonchainHudson),
+    WRAPPED_NATIVE_CURRENCY[UniverseChainId.MoonchainHudson] as Token,
+    USDC_MOONCHAIN_HUDSON,
+    USDT_MOONCHAIN_HUDSON,
   ].map(buildPartialCurrencyInfo),
 }
 

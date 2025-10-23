@@ -3,6 +3,7 @@ import { ALL_NETWORKS_ARG } from 'uniswap/src/data/rest/base'
 import { tokenRankingsStatToCurrencyInfo, useTokenRankingsQuery } from 'uniswap/src/data/rest/tokenRankings'
 import { CustomRankingType } from 'uniswap/src/data/types'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'
+import { isBackendSupportedChainId } from 'uniswap/src/features/chains/utils'
 import { CurrencyInfo } from 'uniswap/src/features/dataApi/types'
 
 export function useTrendingTokensCurrencyInfos(
@@ -14,11 +15,14 @@ export function useTrendingTokensCurrencyInfos(
   refetch: () => void
   loading: boolean
 } {
+  // Skip the query if the chain is not supported by the backend
+  const shouldSkip = skip || (chainFilter !== null && chainFilter !== undefined && !isBackendSupportedChainId(chainFilter))
+  
   const { data, isLoading, error, refetch, isFetching } = useTokenRankingsQuery(
     {
       chainId: chainFilter?.toString() ?? ALL_NETWORKS_ARG,
     },
-    !skip,
+    !shouldSkip,
   )
 
   const trendingTokens = data?.tokenRankings[CustomRankingType.Trending]?.tokens
